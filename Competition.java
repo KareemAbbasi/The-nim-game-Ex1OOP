@@ -174,13 +174,19 @@ public class Competition {
 		int p1Type = parsePlayer1Type(args);
 		int p2Type = parsePlayer2Type(args);
 		int numGames = parseNumberOfGames(args);
+		boolean displayMessage;
 
-		Scanner p1Scanner = new Scanner(System.in);
-		Scanner p2Scanner = new Scanner(System.in);
-		Player p1 = new Player(p1Type, 1, p1Scanner);
-		Player p2 = new Player(p2Type, 2, p2Scanner);
+		Scanner playerScanner = new Scanner(System.in);
+		Player p1 = new Player(p1Type, 1, playerScanner);
+		Player p2 = new Player(p2Type, 2, playerScanner);
 
-		Competition currentCompetition = new Competition(p1, p2, true);
+		if(p1.getPlayerType() == Player.HUMAN || p2.getPlayerType() == Player.HUMAN){
+		    displayMessage = true;
+        } else {
+		    displayMessage = false;
+        }
+
+		Competition currentCompetition = new Competition(p1, p2, displayMessage);
 
         currentCompetition.playMultipleRounds(numGames);
 

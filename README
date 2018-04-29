@@ -2,6 +2,14 @@ kareem
 318378213
 Kareem Abbasi
 
+========================
+= RESUBMISSION CHANGES =
+========================
+1) Had two scanner objects initialised one for each player. Now it's only one.
+2) Fixed an error that caused the competition to always display all the printed messages even when
+none of the players are a human player.
+
+
 ====================
 = File description =
 ====================
