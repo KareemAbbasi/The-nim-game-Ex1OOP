@@ -189,6 +189,7 @@ public class Competition {
 		Competition currentCompetition = new Competition(p1, p2, displayMessage);
 
         currentCompetition.playMultipleRounds(numGames);
+        playerScanner.close();
 
 	}	
 	
